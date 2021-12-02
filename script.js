@@ -144,20 +144,6 @@ const squareClick = (cardElement, column, row) => {
     }
 };
 
-/* const createCard = (cardInfo) => {
-  const suit = document.createElement('div');
-  suit.classList.add('suit',cardInfo.cardColor);
-  suit.innerText = cardInfo.suit;
-  const name = document.createElement('div');
-  name.classList.add('name');
-  name.innerText = cardInfo.name;
-  const card = document.createElement('div');
-  card.classList.add('card');
-  card.appendChild(name);
-  card.appendChild(suit);
-  return card;
-}; */
-
 // create all the board elements that will go on the screen
 // return the built board
 const buildBoardElements = (board) => {
@@ -199,7 +185,6 @@ const buildBoardElements = (board) => {
     }
     boardElement.appendChild(rowElement);
     boardElement.style.display = "none"
-    
   }
 
   // using DOM to create start button
@@ -212,7 +197,6 @@ document.body.appendChild(startButton)
 const gameMessage = document.createElement('h2')
 gameMessage.setAttribute('class', 'game-message')
 document.body.appendChild(gameMessage)
-
 
 // once start button clicked
 startButton.addEventListener("click", () => {

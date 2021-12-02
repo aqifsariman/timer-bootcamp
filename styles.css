@@ -26,6 +26,7 @@ body {
 }
 
 .start-button {
+  font-family: monospace;
   height: 30px;
   width: 100px;
   border-radius: 5px;
@@ -34,4 +35,59 @@ body {
 }
 h2 {
   margin-left: 50px;
+}
+
+.container {
+  font-family: monospace;
+  width: 20px;
+  height: 100px;
+  display: flex;
+}
+
+.start-stop {
+  font-family: monospace;
+  margin: 3px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.reset-lap {
+  font-family: monospace;
+  margin: 3px;
+  display: flex;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.time-data {
+  font-family: monospace;
+  width: 70px;
+  height: 94px;
+  border-radius: 2px;
+  background-color: whitesmoke;
+}
+.elapsed-time {
+  font-family: monospace;
+  width: 151px;
+  height: 15px;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin-left: 4px;
+}
+
+button {
+  font-family: monospace;
+  height: 30px;
+  width: 70px;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.inner-container {
+  display: flex;
 }
