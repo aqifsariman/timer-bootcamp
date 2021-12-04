@@ -173,7 +173,6 @@ const buildBoardElements = (board) => {
       
     }
     boardElement.appendChild(rowElement);
-    boardElement.style.display = "none"
   }
 
   // using DOM to create start button
@@ -248,6 +247,8 @@ initGame()
   elapsedTimeData.classList.add('elapsed-time')
   const resetButton = document.getElementById('reset-button')
   elapsedTimeContainer.appendChild(elapsedTimeData)
+  const lapDataContainer = document.querySelector('.time-data')
+  const lapButton = document.getElementById('lap-button')
   
   let seconds = 0;
   startWatch.addEventListener('click', ()=>
@@ -265,10 +266,17 @@ initGame()
   resetButton.addEventListener('click', ()=>{
     clearInterval(watch)
     seconds = 0;
-  elapsedTimeData.innerText =  seconds.toFixed(1)
+    lapDataContainer.innerText = ''
+    elapsedTimeData.innerText =  seconds.toFixed(1)
     })
+    
 seconds += 0.01;
 }, delayInseconds); })
+lapButton.addEventListener("click",()=>{
+      const lapDataTime = document.createElement('h3')
+    lapDataContainer.appendChild(lapDataTime)
+      lapDataTime.innerText = seconds.toFixed(1)
+    })
 
 
 
@@ -292,9 +300,4 @@ seconds += 0.01;
 
 
 
-/* // function for starting stopwatch
-  const lapDataContainer = document.createElement('div')
-  lapDataContainer.classList.add('time-data')
-  const lapDataTime = document.createElement('h3')
-  lapDataContainer.appendChild(lapDataTime)
-  const lapButton = document.getElementById('lap-button') */
+/*  */
