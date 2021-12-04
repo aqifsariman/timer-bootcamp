@@ -6,16 +6,6 @@ let firstCardElement;
 let deck;
 
 
-const grid = [
-  ['A', 'B'],
-  ['Y', 'Z'],
-];
-
-const upperLeftPosition = grid[0][0]; // 'A'
-const upperRightPosition = grid[0][1]; // 'B'
-const lowerLeftPosition = grid[1][0]; // 'Y'
-const lowerRightPosition = grid[1][1]; // 'Z'
-
 const makeDeck = (cardAmount) => {
   // create the empty deck at the beginning
   const newDeck = [];
@@ -67,7 +57,6 @@ let shuffledCards = shuffleCards(newDeck);
 let zeroToEight = shuffledCards.slice(0,8)
 let zeroToEight2 = shuffledCards.slice(0,8)
 Array.prototype.push.apply(zeroToEight,zeroToEight2); 
-console.log(zeroToEight)
   return zeroToEight;
 };
 
@@ -181,7 +170,7 @@ const buildBoardElements = (board) => {
       });
 
       rowElement.appendChild(square);
-      console.log(rowElement)
+      
     }
     boardElement.appendChild(rowElement);
     boardElement.style.display = "none"
@@ -198,13 +187,12 @@ const gameMessage = document.createElement('h2')
 gameMessage.setAttribute('class', 'game-message')
 document.body.appendChild(gameMessage)
 
-// once start button clicked
-startButton.addEventListener("click", () => {
+const startButtonClicked = () => {
   // once button click, the button will disappear
 startButton.style.display ="none"
 // this resets the gamemessage at the start of the round
 gameMessage.innerText = ''
-let seconds = 10
+let seconds = 30
 const delayInseconds =1;
 const output = document.createElement('div')
 output.setAttribute("class","timer")
@@ -223,10 +211,13 @@ if(seconds <= 0){
 }
 seconds -= 0.01;  
 }, delayInseconds);
-})
-  
+}
+
+// once start button clicked
+startButton.addEventListener("click", () => startButtonClicked())
   return boardElement;
 };
+
 
 const initGame = () => {
   // create this special deck by getting the doubled cards and
@@ -243,10 +234,67 @@ const initGame = () => {
       board[i].push(deck.pop());
     }
   }
-console.log(board)
   const boardEl = buildBoardElements(board);
   document.body.appendChild(boardEl);
   
 };
 
 initGame()
+
+  const startWatch = document.getElementById('start-stopwatch')
+  const stopStopwatch = document.getElementById('stop-stopwatch')
+  const elapsedTimeContainer = document.querySelector('.elapsed-time')
+  const elapsedTimeData = document.createElement('div')
+  elapsedTimeData.classList.add('elapsed-time')
+  const resetButton = document.getElementById('reset-button')
+  elapsedTimeContainer.appendChild(elapsedTimeData)
+  
+  let seconds = 0;
+  startWatch.addEventListener('click', ()=>
+{ 
+  const delayInseconds =1;
+  const watch = setInterval(() => { 
+   elapsedTimeData.innerText =  seconds.toFixed(1)   
+  // stop stopwatch
+  stopStopwatch.addEventListener('click', ()=>{
+  elapsedTimeData.innerText =  seconds.toFixed(1)
+  clearInterval(watch)
+
+    })
+// reset stopwatch
+  resetButton.addEventListener('click', ()=>{
+    clearInterval(watch)
+    seconds = 0;
+  elapsedTimeData.innerText =  seconds.toFixed(1)
+    })
+seconds += 0.01;
+}, delayInseconds); })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // function for starting stopwatch
+  const lapDataContainer = document.createElement('div')
+  lapDataContainer.classList.add('time-data')
+  const lapDataTime = document.createElement('h3')
+  lapDataContainer.appendChild(lapDataTime)
+  const lapButton = document.getElementById('lap-button') */
