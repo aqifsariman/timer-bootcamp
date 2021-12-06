@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(12, 145, 116);
+  background-image: url("https://wallpaperaccess.com/full/1488037.jpg");
 }
 .square {
   padding: 10px;
@@ -12,6 +12,23 @@ body {
   vertical-align: top;
 }
 
+.container {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  margin-left: 48%;
+  color: solid black;
+  font-family: monospace;
+  width: 20px;
+  height: 100px;
+  display: flex;
+}
+
+#header {
+  margin-left: 73px;
+}
+
 .red {
   color: red;
 }
@@ -21,6 +38,7 @@ body {
 }
 
 .timer {
+  color: solid black;
   font-size: 30px;
   margin-left: 100px;
 }
@@ -30,64 +48,97 @@ body {
   height: 30px;
   width: 100px;
   border-radius: 5px;
-  margin-left: 73px;
-  margin-top: 10px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 h2 {
   margin-left: 50px;
 }
 
-.container {
-  font-family: monospace;
-  width: 20px;
-  height: 100px;
-  display: flex;
-}
-
 .start-stop {
+  color: solid black;
+
   font-family: monospace;
-  margin: 3px;
+  margin: 1px;
   border-radius: 5px;
   text-align: center;
   display: flex;
   font-size: 13px;
   margin-top: 6px;
+  margin-right: 18px;
+  margin-left: 10px;
 }
 
 .reset-lap {
+  color: solid black;
   font-family: monospace;
-  margin: 3px;
+  margin: 1px;
+  margin-bottom: 3px;
   display: flex;
   border-radius: 5px;
   text-align: center;
   font-size: 13px;
+  margin-left: 10px;
 }
 
 .time-data {
   font-family: monospace;
   width: 70px;
-  height: 94px;
-  border-radius: 2px;
-  background-color: whitesmoke;
-}
-.elapsed-time {
-  font-family: monospace;
-  width: 144px;
-  height: 15px;
+  height: 105px;
   border-radius: 2px;
   background-color: whitesmoke;
   text-align: center;
+}
+.elapsed-time {
+  font-size: 20px;
+  font-family: monospace;
+  width: 144px;
+  height: 23px;
+  border-radius: 2px;
+  text-align: center;
   margin-left: 4px;
+  background-color: whitesmoke;
 }
 
-button {
+.start-timer {
+  color: solid black;
+  text-align: center;
   font-family: monospace;
-  height: 30px;
-  width: 70px;
-  color: black;
-  background-color: whitesmoke;
+  height: 20px;
+  width: 144px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4px;
 }
 
 .inner-container {
   display: flex;
+}
+
+#reset-button {
+  margin-left: 10px;
+  margin-right: 18px;
+}
+
+#lap-button {
+  width: 44px;
+}
+
+.board {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+  margin-left: 41.5%;
+}
+
+#timer {
+  font-size: 20px;
+  background-color: whitesmoke;
+  width: 233px;
+  height: 25px;
+  border-radius: 10px;
+  text-align: center;
 }
